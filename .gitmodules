@@ -8,3 +8,6 @@
 [submodule "addons/ofxMidi"]
 	path = addons/ofxMidi
 	url = https://github.com/anthonycouret/ofxMidi.git
+[submodule "addons/ofxAudioAnalyzer"]
+	path = addons/ofxAudioAnalyzer
+	url = https://github.com/anthonycouret/ofxAudioAnalyzer.git
