@@ -2,3 +2,9 @@
 [submodule "apps/projectGenerator"]
 	path = apps/projectGenerator
 	url = https://github.com/anthonycouret/projectGenerator.git
+[submodule "addons/ofxFBX"]
+	path = addons/ofxFBX
+	url = https://github.com/anthonycouret/ofxFBX.git
+[submodule "addons/ofxMidi"]
+	path = addons/ofxMidi
+	url = https://github.com/anthonycouret/ofxMidi.git
