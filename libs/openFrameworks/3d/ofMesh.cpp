@@ -677,6 +677,11 @@ void ofMesh::drawFaces() const{
 }
 
 //--------------------------------------------------------------
+void ofMesh::drawPatches() const {
+	draw( OF_MESH_PATCHES );
+}
+
+//--------------------------------------------------------------
 void ofMesh::draw() const{
 	draw(OF_MESH_FILL);
 }

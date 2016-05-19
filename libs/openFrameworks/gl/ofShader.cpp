@@ -1257,6 +1257,8 @@ string ofShader::nameForType(GLenum type){
 	switch(type) {
 		case GL_VERTEX_SHADER: return "GL_VERTEX_SHADER";
 		case GL_FRAGMENT_SHADER: return "GL_FRAGMENT_SHADER";
+		case GL_TESS_CONTROL_SHADER: return "GL_TESS_CONTROL_SHADER";
+		case GL_TESS_EVALUATION_SHADER: return "GL_TESS_EVALUATION_SHADER";
 		#ifndef TARGET_OPENGLES
 		case GL_GEOMETRY_SHADER_EXT: return "GL_GEOMETRY_SHADER_EXT";
 		#ifdef glDispatchCompute

@@ -163,6 +163,9 @@ void ofGLProgrammableRenderer::draw(const ofMesh & vertexData, ofPolyRenderMode 
 	case OF_MESH_FILL:
 		drawMode = ofGetGLPrimitiveMode(vertexData.getMode());
 		break;
+	case OF_MESH_PATCHES:
+		drawMode = ofGetGLPrimitiveMode(vertexData.getMode());
+		break;
 	default:
 		drawMode = ofGetGLPrimitiveMode(vertexData.getMode());
 		break;
@@ -191,6 +194,9 @@ void ofGLProgrammableRenderer::draw(const ofMesh & vertexData, ofPolyRenderMode 
 		drawMode = GL_LINE_STRIP;
 		break;
 	case OF_MESH_FILL:
+		drawMode = ofGetGLPrimitiveMode(vertexData.getMode());
+		break;
+	case OF_MESH_PATCHES:
 		drawMode = ofGetGLPrimitiveMode(vertexData.getMode());
 		break;
 	default:
@@ -417,6 +423,11 @@ void ofGLProgrammableRenderer::draw(const ofBaseVideoDraws & video, float x, flo
 
 //----------------------------------------------------------
 void ofGLProgrammableRenderer::draw(const ofVbo & vbo, GLuint drawMode, int first, int total) const{
+	
+	if( drawMode == GL_PATCHES ) {
+		glPatchParameteri( GL_PATCH_VERTICES, 3 );
+	}
+	
 	if(vbo.getUsingVerts()) {
 		vbo.bind();
 		const_cast<ofGLProgrammableRenderer*>(this)->setAttributes(vbo.getUsingVerts(),vbo.getUsingColors(),vbo.getUsingTexCoords(),vbo.getUsingNormals());
@@ -427,6 +438,11 @@ void ofGLProgrammableRenderer::draw(const ofVbo & vbo, GLuint drawMode, int firs
 
 //----------------------------------------------------------
 void ofGLProgrammableRenderer::drawElements(const ofVbo & vbo, GLuint drawMode, int amt, int offsetelements) const{
+	
+	if( drawMode == GL_PATCHES ) {
+		glPatchParameteri( GL_PATCH_VERTICES, 3 );
+	}
+	
 	if(vbo.getUsingVerts()) {
 		vbo.bind();
 		const_cast<ofGLProgrammableRenderer*>(this)->setAttributes(vbo.getUsingVerts(),vbo.getUsingColors(),vbo.getUsingTexCoords(),vbo.getUsingNormals());

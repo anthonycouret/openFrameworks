@@ -585,6 +585,8 @@ public:
 	/// \brief This draws the mesh as faces, meaning that you'll have a collection of faces.
 	void drawFaces() const;
 
+	void drawPatches() const;
+	
 	/// \brief This draws the mesh using its primitive type, meaning that if 
 	/// you set them up to be triangles, this will draw the triangles.
 	void draw() const;

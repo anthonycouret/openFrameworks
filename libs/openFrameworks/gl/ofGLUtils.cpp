@@ -350,6 +350,9 @@ GLuint ofGetGLPolyMode(ofPolyRenderMode m){
 		case(OF_MESH_FILL):
 			return GL_FILL;
 			break;
+		case(OF_MESH_PATCHES):
+			return GL_PATCHES;
+			break;
 		default:
 			ofLogError("ofGLUtils") << "ofGetGLPolyMode(): unknown OF poly mode " << ofToString(m) << ", returning GL_FILL";
 			return GL_FILL;
@@ -371,6 +374,9 @@ ofPolyRenderMode ofGetOFPolyMode(GLuint m){
 			break;
 		case(GL_FILL):
 			return OF_MESH_FILL;
+			break;
+		case(OF_MESH_PATCHES):
+			return OF_MESH_PATCHES;
 			break;
 		default:
 			ofLogError("ofGLUtils") << "ofGetOFPolyMode(): unknown GL poly mode " << ofToString(m) << ", returning OF_MESH_FILL";
